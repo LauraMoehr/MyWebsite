@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LauraMoehrWebDev</title>
+    <link href="" rel="stylesheet">
+    <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 200px 200px 130px 380px 180px 60px;
+      background-color: cornflowerblue;
+      padding: 10px 10px 20px 10px;
+      gap: 10px; 
+      font-family: Helvetica;
+      font-size: 9px;
+      font-weight: 300;
+    }
+    .header {
+        grid-column: 3/ 5;
+        grid-row: 1/ 2;
+        background-color: lightseagreen;
+        padding: 5% 5% 10% 5%;
+        border-radius: 10px;
+        text-align: right;
+    }
+    .imgLaura {
+        grid-column: 1/ 3;
+        grid-row: 1/ 2;
+        padding: 5% 5% 10% 5%;
+    }
+    #img {
+      border-radius: 10px;
+      max-height: 100%;
+      max-width: 100%;
+      justify-self: center;
+      align-self: center;
+      opacity: 0.7;
+    }
+    #img:hover {
+      opacity: 1;
+    }
+    .bio {
+        grid-column: 1/ 4;
+        grid-row: 2/ 3;
+        background-color: lightskyblue;
+        padding: 5% 5% 10% 5%;
+        border-radius: 10px;
+        overflow: scroll;
+    }
+    .skills {
+        grid-column: 1/5;
+        grid-row: 3/ 4;
+        background-color: mediumaquamarine;
+        padding: 5% 5% 10% 5%;
+        border-radius: 10px;
+    }
+    .interests {
+        grid-column: 3/ 5;
+        grid-row: 4/ 5;
+        background-color: lightseagreen;
+        padding: 5% 5% 10% 5%;
+        border-radius: 10px;
+    }
+    .message {
+        grid-column: 1/ 4;
+        grid-row: 5/ 6;
+        background-color:lightskyblue;
+        padding: 5% 5% 10% 5%;
+        border-radius: 10px;
+    }
+    .footer {
+        grid-column: 1/ 5;
+        grid-row: 6/ 7;
+        background-color: mediumaquamarine;
+        padding: 5% 5% 10% 5%;
+        border-radius: 10px;
+    }
+    .bio aside {
+      font-style: italic;
+    }
+    #submit:active {
+        margin-top: 2px;
+      }
+    #comment, #name, #mail, #submit {
+      background-color: lightskyblue;
+      border-width: 1px;
+      border-color: black;
+      border-style: solid;
+      border-radius: 10px;
+      max-width: 100%;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 10px repeat(4, 80px);
+      gap: 5px;
+    }
+    .item1 {
+      grid-row: 1/ 2;
+    }
+    .item2 {
+      grid-row: 2/ 3;
+    }
+    .item3 {
+      grid-row: 3/ 4;
+      justify-self: center;
+      align-self: center;
+    }
+    .item4 {
+      grid-row: 4/ 5;
+      justify-self: center;
+      align-self: center;
+    }
+    .item5 {
+      grid-row: 5/ 6;
+      justify-self: center;
+      align-self: center;
+    }
+    .galleryImage {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+    }
+    a {
+      color: black;
+      line-height: 1.5;
+    }
+    a:hover {
+      color: white;
+    }
+    .message textarea, #name, #mail {
+      color: white;
+      font-size: 9px;
+    }
+    #submit {
+      font-size: 9px;
+    }
+    h1, h2 {
+      font-weight: 300;
+    }
+    h1 {
+      font-size: 15px;
+    }
+    h2 {
+      font-size: 12px;
+    }
+
+    @media screen and (min-width: 720px){
+      .container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 250px 250px 150px;
+        background-color: cornflowerblue;
+        padding: 10px 10px 20px 10px;
+        gap: 30px; 
+        font-family: Helvetica;
+        font-size: 10px;
+        font-weight: 300;
+      }
+      .header {
+          grid-column: 3/ 5;
+          grid-row: 1/ 2;
+          background-color: lightseagreen;
+          padding: 5% 5% 10% 5%;
+          border-radius: 10px;
+          text-align: right;
+      }
+      .imgLaura {
+          grid-column: 1/ 3;
+          grid-row: 1/ 2;
+          padding: 5% 5% 10% 5%;
+      }
+      #img {
+        border-radius: 10px;
+        max-height: 100%;
+        max-width: 100%;
+        justify-self: center;
+        align-self: center;
+        opacity: 0.7;
+      }
+      #img:hover {
+        opacity: 1;
+      }
+      .bio {
+          grid-column: 2/ 3;
+          grid-row: 1/ 3;
+          background-color: lightskyblue;
+          padding: 5% 5% 10% 5%;
+          border-radius: 10px;
+      }
+      .skills {
+          grid-column: 3/ 4;
+          grid-row: 2/ 3;
+          background-color: mediumaquamarine;
+          padding: 5% 5% 10% 5%;
+          border-radius: 10px;
+      }
+      .interests {
+          grid-column: 1/ 4;
+          grid-row: 3/ 4;
+          background-color: lightseagreen;
+          padding: 5% 5% 10% 5%;
+          border-radius: 10px;
+      }
+      .message {
+          grid-column: 4/ 5;
+          grid-row: 2/ 3;
+          background-color:lightskyblue;
+          padding: 5% 5% 10% 5%;
+          border-radius: 10px;
+      }
+      .footer {
+          grid-column: 4/ 5;
+          grid-row: 3/ 4;
+          background-color: mediumaquamarine;
+          padding: 5% 5% 10% 5%;
+          border-radius: 10px;
+      }
+      .bio aside {
+        font-style: italic;
+      }
+      #submit:active {
+          margin-top: 2px;
+        }
+      #comment, #name, #mail, #submit {
+        background-color: lightskyblue;
+        border-width: 1px;
+        border-color: black;
+        border-style: solid;
+        border-radius: 10px;
+        max-width: 100%;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 20px 60px;
+      }
+      .item1 {
+        grid-column: 1/ 2;
+        grid-row: 1/ 2;
+      }
+      .item2 {
+        grid-column: 1/ 2;
+        grid-row: 2/ 3;
+      }
+      .item3 {
+        grid-column: 2/ 3;
+        grid-row: 1/ 3;
+        justify-self: center;
+        align-self: center;
+        padding: 5% 5% 20% 5%;
+      }
+      .item4 {
+        grid-column: 3/ 4;
+        grid-row: 1/ 3;
+        justify-self: center;
+        align-self: center;
+        padding: 5% 5% 20% 5%;
+      }
+      .item5 {
+        grid-column: 4/ 5;
+        grid-row: 1/ 3;
+        justify-self: center;
+        align-self: center;
+        padding: 5% 5% 20% 5%;
+      }
+      .galleryImage {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 10px;
+      }
+      a {
+        color: black;
+        line-height: 1.5;
+      }
+      a:hover {
+        color: white;
+      }
+      .message textarea, #name, #mail {
+        color: white;
+        font-size: 10px;
+      }
+      #submit {
+        font-size: 10px;
+      }
+      h1, h2 {
+        font-weight: 300;
+      }
+      h1 {
+        font-size: 20px;
+      }
+      h2 {
+        font-size: 15px;
+      }
+    }
+    </style>
+  </head>
+
+  <body class="container">
+    <header class="header">
+      <h1 id="home">Welcome to my Website</h1>
+      <h2>Laura - Web Developer in the making</h3>
+      <nav>
+        <a href="#bio">About</a><br>
+        <a href="#skills">Skills</a><br>
+        <a href="#interests">Interests</a><br>
+        <a href="#contact">Contact</a><br>
+        <a href="#github">GitHub</a>
+      </nav>
+    </header>
+
+    <!-- <main> -->
+      <section class="imgLaura">
+        <img src="https://blog.fotogloria.de/wp-content/uploads/2020/09/VerenaMueller005-scaled.jpg" id="img" alt="Photo of Laura Moehr by Verena Mueller"/>
+      </section>
+
+      <section class="bio">
+        <a id="bio">About Me</a>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et natus
+          exercitationem sunt incidunt, quidem sapiente aspernatur possimus
+          nulla molestias quo esse tempora adipisci soluta, voluptatem doloribus
+          accusamus ducimus ab, perferendis id impedit reprehenderit ipsum
+          veniam! Repudiandae quo aperiam assumenda dolorem!
+        </p>
+        <aside>Fancy quote to be added here.</aside>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur,
+          laboriosam. Repellendus tenetur architecto porro harum magnam, magni
+          earum in obcaecati quasi, facere doloribus qui nulla, dignissimos quod
+          consectetur! Alias sed reprehenderit corrupti ad distinctio non
+          adipisci et commodi. Suscipit tenetur eos et recusandae voluptates
+          doloremque, voluptas nesciunt aperiam nostrum porro, quae vitae dicta
+          asperiores ut repudiandae. Recusandae voluptates eius enim provident.
+          Quibusdam laudantium ab suscipit aspernatur numquam quidem, magnam,
+          consequuntur at inventore maxime possimus non magni libero tempore
+          omnis cumque porro quam provident iure culpa error. Explicabo non a
+          nostrum dolor odio illo, laboriosam recusandae cum natus vitae modi
+          exercitationem.
+        </p>
+    </section>
+
+    <section class="skills">
+        <a id="skills">Skills</a>
+        <ul>
+          <li>HTML5, CSS3, JavaScript ES2020, React 17, styled-components, React</li>
+          <li>Styleguidist, React Router</li>
+          <li>Node.js, npm, Express, MongoDB, mongoose, Git/Github Workflow</li>
+          <li>Jest, Cypress</li>
+          <li>Figma</li>
+        </ul>
+    </section>
+
+    <section class="interests">
+      <section class="gallery">
+        <a class="galleryImage item1" id="interests">Interests</a>
+        <p class="galleryImage item2">Among other things I also love to watch and paint birds - you will often find me with my binos in nature.</p>
+        <img src="GreyGoose.jpg" alt="Watercolor of grey goose resting" class="galleryImage item3">
+        <img src="TwoKingfishers.jpg" alt="Watercolor of kingfishers couple, one bird presenting a fish to his partner" class="galleryImage item4">
+        <img src="BirdsHeads.jpg" alt="Watercolor of several birds' heads" class="galleryImage item5">
+      </section>
+    </section>
+
+
+      <section class="message">
+          <p>Let's get in touch? Leave me a message here:</p>
+          <form>
+            <textarea name="comment" id="comment" required></textarea><br>
+            <label>name:<br><input id="name" name="name" type="text" required></label><br>
+            <label>email:<br><input id="mail" name="mail" type="email" required></label><br>
+            <label><input type="checkbox" id="news" name="news" value="yes" checked>Yes, please send me the newsletter.</label><br>
+            <button type="submit" name="submit" id="submit">Submit</button>
+          </form>
+      </section>
+      <!-- </main> -->
+
+    <footer class="footer">
+      <a href="#home">Home</a><br>
+      <a id="contact" href="#">Contact</a><br>
+      <a id="github" href="https://github.com/LauraMoehr">GitHub</a>
+    </footer>
+  </body>
+</html>
